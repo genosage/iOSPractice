@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="J3D-2v-LOQ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k06-zr-Gca">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="X7z-MX-lPl">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="BYZ-38-t0r" id="zyQ-52-bAm"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todoCell" rowHeight="88" id="5A4-Bw-CR9">
+                                        <rect key="frame" x="0.0" y="136" width="320" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5A4-Bw-CR9" id="1vG-HV-kRY">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="87.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="center" image="child-selected" translatesAutoresizingMaskIntoConstraints="NO" id="gCj-LE-BKS">
+                                                    <rect key="frame" x="8" y="19" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="Ioy-gd-srv"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="go to playground" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enZ-UV-QTH">
+                                                    <rect key="frame" x="79" y="16" width="191" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="01/10/2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTe-FC-yKa">
+                                                    <rect key="frame" x="79" y="48" width="191" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="qCM-gN-Qpb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gCj-LE-BKS" firstAttribute="bottom" secondItem="MTe-FC-yKa" secondAttribute="bottom" id="74I-9G-rrU"/>
+                                                <constraint firstItem="MTe-FC-yKa" firstAttribute="trailing" secondItem="enZ-UV-QTH" secondAttribute="trailing" id="7Jz-oR-Ivd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="enZ-UV-QTH" secondAttribute="trailing" constant="42" id="88a-GA-s2M"/>
+                                                <constraint firstItem="enZ-UV-QTH" firstAttribute="leading" secondItem="gCj-LE-BKS" secondAttribute="trailing" constant="21" id="Zsx-2o-Y40"/>
+                                                <constraint firstItem="MTe-FC-yKa" firstAttribute="leading" secondItem="enZ-UV-QTH" secondAttribute="leading" id="dSZ-gL-i42"/>
+                                                <constraint firstItem="gCj-LE-BKS" firstAttribute="leading" secondItem="1vG-HV-kRY" secondAttribute="leadingMargin" id="daH-Nc-w2B"/>
+                                                <constraint firstItem="MTe-FC-yKa" firstAttribute="top" secondItem="enZ-UV-QTH" secondAttribute="bottom" constant="8" symbolic="YES" id="tBk-xv-fYR"/>
+                                                <constraint firstItem="gCj-LE-BKS" firstAttribute="centerY" secondItem="1vG-HV-kRY" secondAttribute="centerY" id="y66-Fe-S03"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="M0G-wz-5RG" kind="push" identifier="EditTodo" id="yNj-NE-dc5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="W1p-im-oWu"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xAB-IU-MLW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="k06-zr-Gca" secondAttribute="trailing" id="3fo-LG-c6K"/>
+                            <constraint firstItem="k06-zr-Gca" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FsK-5E-NeB"/>
+                            <constraint firstItem="k06-zr-Gca" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="emg-3i-RRq"/>
+                            <constraint firstItem="k06-zr-Gca" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="s7F-bC-rNB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ypr-bJ-Rxt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="frg-K9-Isn">
+                            <connections>
+                                <segue destination="M0G-wz-5RG" kind="push" id="5RQ-gd-ZYk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="CSy-rD-pzu" id="2LM-Jr-B0Z"/>
+                        <outlet property="tableView" destination="k06-zr-Gca" id="X9S-fv-TMY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="CSy-rD-pzu">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Lja-0y-4gp"/>
+                        <outlet property="searchBar" destination="X7z-MX-lPl" id="72y-2K-Hza"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="WmS-l4-C2r"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="zVW-a2-CkU"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="Alv-Gm-mty"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="555" y="368"/>
+        </scene>
+        <!--Detail View Cotroller-->
+        <scene sceneID="bdW-9t-ZB4">
+            <objects>
+                <viewController id="M0G-wz-5RG" customClass="DetailViewCotroller" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kUZ-Tk-sUP"/>
+                        <viewControllerLayoutGuide type="bottom" id="5sn-dW-6Ln"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cCA-TQ-H1V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpq-eP-rei">
+                                <rect key="frame" x="20" y="98" width="50" height="50"/>
+                                <state key="normal" backgroundImage="child"/>
+                                <state key="selected" image="child-selected"/>
+                                <connections>
+                                    <action selector="childTapped:" destination="M0G-wz-5RG" eventType="touchUpInside" id="zQG-ml-3i1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyL-19-c9Q">
+                                <rect key="frame" x="99" y="98" width="50" height="50"/>
+                                <state key="normal" backgroundImage="phone"/>
+                                <state key="selected" image="phone-selected"/>
+                                <connections>
+                                    <action selector="phoneTapped:" destination="M0G-wz-5RG" eventType="touchUpInside" id="FKe-Nu-1nn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpS-d1-6Xw">
+                                <rect key="frame" x="250" y="98" width="50" height="50"/>
+                                <state key="normal" backgroundImage="travel"/>
+                                <state key="selected" image="travel-selected"/>
+                                <connections>
+                                    <action selector="travelTapped:" destination="M0G-wz-5RG" eventType="touchUpInside" id="Pdw-x5-jBm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8u-qh-Ctl">
+                                <rect key="frame" x="176" y="98" width="50" height="50"/>
+                                <state key="normal" backgroundImage="shopping-cart"/>
+                                <state key="selected" image="shopping-cart-selected"/>
+                                <connections>
+                                    <action selector="shoppingCartTapped:" destination="M0G-wz-5RG" eventType="touchUpInside" id="6J0-YV-oXd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Todo Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmi-iR-XR9">
+                                <rect key="frame" x="20" y="178" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqO-lQ-9H1">
+                                <rect key="frame" x="105" y="174" width="195" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rvc-JD-YcR">
+                                <rect key="frame" x="0.0" y="231" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="465457370.52524197">
+                                    <!--2015-10-02 05:42:50 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXw-eN-iIV">
+                                <rect key="frame" x="133" y="476" width="55" height="30"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="okTapped:" destination="M0G-wz-5RG" eventType="touchUpInside" id="l8P-GR-2Wz"/>
+                                    <segue destination="Aqo-E3-Xhl" kind="unwind" unwindAction="close:" id="mni-gg-jNE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="idB-Zu-aJm"/>
+                    <connections>
+                        <outlet property="childButton" destination="zpq-eP-rei" id="pBD-XC-oDL"/>
+                        <outlet property="phoneButton" destination="KyL-19-c9Q" id="QdK-DX-r6V"/>
+                        <outlet property="shoppingCartButton" destination="C8u-qh-Ctl" id="b6z-Lv-Lvk"/>
+                        <outlet property="todoDate" destination="Rvc-JD-YcR" id="12H-5y-w7S"/>
+                        <outlet property="todoItem" destination="iqO-lQ-9H1" id="3fv-kK-9rQ"/>
+                        <outlet property="travelButton" destination="UpS-d1-6Xw" id="MuS-jg-dhv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9u8-t2-2Ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Aqo-E3-Xhl" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oed-HP-0SK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J3D-2v-LOQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tfz-Kb-QNo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iEN-fM-5CL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NdP-21-dqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160" y="368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="child" width="50" height="50"/>
+        <image name="child-selected" width="50" height="50"/>
+        <image name="phone" width="50" height="50"/>
+        <image name="phone-selected" width="50" height="50"/>
+        <image name="shopping-cart" width="50" height="50"/>
+        <image name="shopping-cart-selected" width="50" height="50"/>
+        <image name="travel" width="50" height="50"/>
+        <image name="travel-selected" width="50" height="50"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yNj-NE-dc5"/>
+    </inferredMetricsTieBreakers>
+</document>

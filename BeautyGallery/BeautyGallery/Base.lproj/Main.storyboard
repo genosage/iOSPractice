@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="paJ-1y-vb3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--BeautyGallery-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeautyGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tt5-Un-4n8"/>
+                        <viewControllerLayoutGuide type="bottom" id="gau-I2-215"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfa-X8-sjn">
+                                <rect key="frame" x="20" y="71" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XUG-cc-qEH">
+                                <rect key="frame" x="0.0" y="100" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vy-Cp-MiB">
+                                <rect key="frame" x="133" y="324" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <segue destination="F3v-18-fzt" kind="push" identifier="GoToGallery" id="7YC-VG-v5O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BeautyGallery" id="uQT-Es-7PF"/>
+                    <connections>
+                        <outlet property="beautyPicker" destination="XUG-cc-qEH" id="ihC-8k-nHr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1208" y="367"/>
+        </scene>
+        <!--Gallery View Controller-->
+        <scene sceneID="Ahe-5z-bsc">
+            <objects>
+                <viewController id="F3v-18-fzt" customClass="GalleryViewController" customModule="BeautyGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sNQ-7k-C8a"/>
+                        <viewControllerLayoutGuide type="bottom" id="j0F-3H-KOO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gtn-9S-NRX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="japanese" translatesAutoresizingMaskIntoConstraints="NO" id="kEB-rH-hmP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jYJ-s0-ZiD">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="bGS-mT-Sxw">
+                            <connections>
+                                <action selector="shareTapped:" destination="F3v-18-fzt" id="KK2-09-osk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="beautyImage" destination="kEB-rH-hmP" id="3b7-xD-ILs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AC8-ps-tIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620.5" y="366.5"/>
+        </scene>
+        <!--China-->
+        <scene sceneID="2tT-iR-7DX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O3P-ai-uZ7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="China" image="great_wall" id="8mL-rw-QAG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="74T-7o-ny6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LFR-w3-ctb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vgT-fW-pXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785" y="367"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="32I-d9-Phk">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="paJ-1y-vb3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="rCN-lv-B5s">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="O3P-ai-uZ7" kind="relationship" relationship="viewControllers" id="9Ww-Nz-LJV"/>
+                        <segue destination="Tt2-Lw-3le" kind="relationship" relationship="viewControllers" id="VwH-Bn-VvD"/>
+                        <segue destination="VcP-oy-eFc" kind="relationship" relationship="viewControllers" id="9oo-BD-uKg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4I-MO-FZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="1073"/>
+        </scene>
+        <!--Japanese-->
+        <scene sceneID="wbf-B1-GOl">
+            <objects>
+                <viewController id="Tt2-Lw-3le" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kfi-34-vAS"/>
+                        <viewControllerLayoutGuide type="bottom" id="rKo-XX-8PY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lOc-Yz-RDp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="japanese" translatesAutoresizingMaskIntoConstraints="NO" id="nQ9-T4-07T">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Japanese" image="geisha" badgeValue="1" id="Scf-qP-Inp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EyT-fk-4hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785" y="1073"/>
+        </scene>
+        <!--Korean-->
+        <scene sceneID="JWp-ky-vT5">
+            <objects>
+                <viewController id="VcP-oy-eFc" customClass="KoreanViewController" customModule="BeautyGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oBs-sJ-AVT"/>
+                        <viewControllerLayoutGuide type="bottom" id="aSk-6Q-HHq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8td-ER-9qN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="korean" translatesAutoresizingMaskIntoConstraints="NO" id="A9R-Y3-ZmD">
+                                <rect key="frame" x="44" y="20" width="287" height="510"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ro-5v-oBj">
+                                <rect key="frame" x="277.5" y="549" width="50" height="50"/>
+                                <state key="normal" backgroundImage="weibo"/>
+                                <connections>
+                                    <action selector="weiboTapped:" destination="VcP-oy-eFc" eventType="touchUpInside" id="Lwg-y2-boh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUb-dc-CT5">
+                                <rect key="frame" x="162.5" y="549" width="50" height="50"/>
+                                <state key="normal" backgroundImage="twitter"/>
+                                <connections>
+                                    <action selector="twitterTapped:" destination="VcP-oy-eFc" eventType="touchUpInside" id="kgu-H8-cbP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAp-Gz-wvW">
+                                <rect key="frame" x="47.5" y="549" width="50" height="50"/>
+                                <state key="normal" backgroundImage="facebook"/>
+                                <connections>
+                                    <action selector="facebookTapped:" destination="VcP-oy-eFc" eventType="touchUpInside" id="DHa-Wb-yoW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nAp-Gz-wvW" firstAttribute="top" secondItem="A9R-Y3-ZmD" secondAttribute="bottom" constant="19" id="1L6-8Z-qnF"/>
+                            <constraint firstItem="aSk-6Q-HHq" firstAttribute="top" secondItem="nAp-Gz-wvW" secondAttribute="bottom" constant="19" id="7yI-ux-bEp"/>
+                            <constraint firstItem="VUb-dc-CT5" firstAttribute="leading" secondItem="nAp-Gz-wvW" secondAttribute="trailing" constant="65" id="ITl-p1-z29"/>
+                            <constraint firstItem="nAp-Gz-wvW" firstAttribute="top" secondItem="VUb-dc-CT5" secondAttribute="top" id="MEs-tr-bg9"/>
+                            <constraint firstItem="VUb-dc-CT5" firstAttribute="top" secondItem="6ro-5v-oBj" secondAttribute="top" id="cZk-FH-Dfi"/>
+                            <constraint firstItem="nAp-Gz-wvW" firstAttribute="bottom" secondItem="VUb-dc-CT5" secondAttribute="bottom" id="gk4-PX-D4K"/>
+                            <constraint firstItem="A9R-Y3-ZmD" firstAttribute="leading" secondItem="8td-ER-9qN" secondAttribute="leadingMargin" constant="28" id="lMH-qM-Btm"/>
+                            <constraint firstItem="A9R-Y3-ZmD" firstAttribute="centerX" secondItem="8td-ER-9qN" secondAttribute="centerX" id="nFV-9N-FZp"/>
+                            <constraint firstItem="A9R-Y3-ZmD" firstAttribute="top" secondItem="oBs-sJ-AVT" secondAttribute="bottom" id="xmX-4L-0pl"/>
+                            <constraint firstItem="6ro-5v-oBj" firstAttribute="leading" secondItem="VUb-dc-CT5" secondAttribute="trailing" constant="65" id="yNU-Py-V94"/>
+                            <constraint firstItem="VUb-dc-CT5" firstAttribute="centerX" secondItem="A9R-Y3-ZmD" secondAttribute="centerX" id="zQJ-aQ-vFk"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Korean" image="torii" badgeValue="1" id="AUK-y1-gxq"/>
+                    <connections>
+                        <outlet property="koreanBeautyImage" destination="A9R-Y3-ZmD" id="IdN-eC-jTj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ll-CW-Pzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785" y="1782"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook" width="50" height="50"/>
+        <image name="geisha" width="25" height="25"/>
+        <image name="great_wall" width="25" height="25"/>
+        <image name="japanese" width="320" height="568"/>
+        <image name="korean" width="320" height="568"/>
+        <image name="torii" width="25" height="25"/>
+        <image name="twitter" width="50" height="50"/>
+        <image name="weibo" width="50" height="50"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
