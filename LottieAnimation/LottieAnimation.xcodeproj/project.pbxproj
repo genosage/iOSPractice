@@ -18,6 +18,8 @@
 		7B77E3351E595CF200DFE4EE /* buttonOn.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B77E3321E595CF200DFE4EE /* buttonOn.json */; };
 		7B77E3361E595CF200DFE4EE /* PinJump.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B77E3331E595CF200DFE4EE /* PinJump.json */; };
 		7B8E33D51E59751D00FB6E9A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E33D41E59751D00FB6E9A /* SWRevealViewController.m */; };
+		7B8E33DB1E5ABD0400FB6E9A /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E33DA1E5ABD0400FB6E9A /* MenuTableViewController.m */; };
+		7B8E33DE1E5AC50500FB6E9A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E33DD1E5AC50500FB6E9A /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,10 @@
 		7B77E3331E595CF200DFE4EE /* PinJump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PinJump.json; sourceTree = "<group>"; };
 		7B8E33D31E59751D00FB6E9A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		7B8E33D41E59751D00FB6E9A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		7B8E33D91E5ABD0400FB6E9A /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		7B8E33DA1E5ABD0400FB6E9A /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		7B8E33DC1E5AC50500FB6E9A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		7B8E33DD1E5AC50500FB6E9A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 				7B77E3371E595D2500DFE4EE /* Animation */,
 				7B1CABCE1E59538500CB6478 /* AppDelegate.h */,
 				7B1CABCF1E59538500CB6478 /* AppDelegate.m */,
+				7B8E33DC1E5AC50500FB6E9A /* SettingsViewController.h */,
+				7B8E33DD1E5AC50500FB6E9A /* SettingsViewController.m */,
+				7B8E33D91E5ABD0400FB6E9A /* MenuTableViewController.h */,
+				7B8E33DA1E5ABD0400FB6E9A /* MenuTableViewController.m */,
 				7B1CABD11E59538500CB6478 /* ViewController.h */,
 				7B1CABD21E59538500CB6478 /* ViewController.m */,
 				7B1CABD41E59538500CB6478 /* Main.storyboard */,
@@ -262,7 +272,9 @@
 				7B1CABD31E59538500CB6478 /* ViewController.m in Sources */,
 				7B1CABD01E59538500CB6478 /* AppDelegate.m in Sources */,
 				7B1CABCD1E59538500CB6478 /* main.m in Sources */,
+				7B8E33DE1E5AC50500FB6E9A /* SettingsViewController.m in Sources */,
 				7B8E33D51E59751D00FB6E9A /* SWRevealViewController.m in Sources */,
+				7B8E33DB1E5ABD0400FB6E9A /* MenuTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

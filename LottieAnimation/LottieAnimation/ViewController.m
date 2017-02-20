@@ -7,17 +7,20 @@
 //
 
 #import "ViewController.h"
-#import "SWRevealViewController.h"
 
 @interface ViewController ()
 {
     BOOL menuOn;
-    LOTAnimationView *hamburgerMenuButton;
     CGRect hamburgerMenuFrame;
+    LOTAnimationView *hamburgerButton;
 }
 
-- (void)addHamburgerButton:(BOOL)on;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *additionalMenuButton;
+
+@property (weak, nonatomic) IBOutlet UIView *hamburgerButtonView;
+
 - (IBAction)showAnimation:(UIButton *)sender;
+- (void)addHamburgerButton:(BOOL)on;
 - (void)addMenuToggleRecognizer;
 - (void)toggleMenu:(UITapGestureRecognizer *)recognizer;
 
@@ -27,34 +30,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     menuOn = false;
-//    NSLog(@"%f", self.navigationItem.leftBarButtonItem.width);
-//    NSLog(@"%lu", self.navigationItem.leftBarButtonItems.count);
-    hamburgerMenuFrame = CGRectMake(0, 0, 75, 75);
+    hamburgerMenuFrame = CGRectMake(-30, -18, 75, 75);
+    _hamburgerButtonView.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+    
+    
     [self addHamburgerButton:menuOn];
+    
+    [_additionalMenuButton setTarget:self.revealViewController];
+    [_additionalMenuButton setAction:@selector(revealToggle:)];
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 
 - (void)addHamburgerButton:(BOOL)on {
-    if (hamburgerMenuButton != nil) {
-        [hamburgerMenuButton removeFromSuperview];
-        hamburgerMenuButton = nil;
+    if (hamburgerButton != nil) {
+        [hamburgerButton removeFromSuperview];
+        hamburgerButton = nil;
     }
     
     NSString *animation = on ? @"buttonOff" : @"buttonOn";
     
-    hamburgerMenuButton = [LOTAnimationView animationNamed:animation];
-    [hamburgerMenuButton setUserInteractionEnabled:true];
-    hamburgerMenuButton.frame = hamburgerMenuFrame;
-    hamburgerMenuButton.contentMode = UIViewContentModeScaleAspectFill;
+    hamburgerButton = [LOTAnimationView animationNamed:animation];
+    [hamburgerButton setUserInteractionEnabled:true];
+    hamburgerButton.frame = hamburgerMenuFrame;
+    hamburgerButton.contentMode = UIViewContentModeScaleAspectFill;
     
     [self addMenuToggleRecognizer];
     
-//    [self.view addSubview:hamburgerMenuButton];
-    
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc]initWithCustomView:hamburgerMenuButton];
-    self.navigationItem.leftBarButtonItem = barButtonItem;
+    [_hamburgerButtonView addSubview:hamburgerButton];
 }
 
 - (void)addMenuToggleRecognizer{
@@ -64,17 +69,19 @@
     
     tapRecognizer.numberOfTapsRequired = 1;
     
-    [hamburgerMenuButton addGestureRecognizer:tapRecognizer];
+    [hamburgerButton addGestureRecognizer:tapRecognizer];
 }
 
 - (void)toggleMenu:(UITapGestureRecognizer *)recognizer {
     if (!menuOn) {
-        [hamburgerMenuButton playWithCompletion:^(BOOL animationFinished) {
+        [hamburgerButton setAnimationSpeed:2.5];
+        [hamburgerButton playWithCompletion:^(BOOL animationFinished) {
             menuOn = true;
             [self addHamburgerButton:menuOn];
         }];
     } else {
-        [hamburgerMenuButton playWithCompletion:^(BOOL animationFinished) {
+        [hamburgerButton setAnimationSpeed:1.5];
+        [hamburgerButton playWithCompletion:^(BOOL animationFinished) {
             menuOn = false;
             [self addHamburgerButton:menuOn];
         }];
@@ -83,7 +90,7 @@
 
 - (IBAction)showAnimation:(UIButton *)sender {
     LOTAnimationView *animationView = [LOTAnimationView animationNamed:@"PinJump"];
-    animationView.frame = CGRectMake(0, 100, self.view.frame.size.width, 250);
+    animationView.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.width);
     animationView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:animationView];
     animationView.loopAnimation = YES;
