@@ -6,13 +6,11 @@
 //  Copyright © 2017 Tian Zhang. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "AnimationViewController.h"
 
-@interface ViewController ()
+@interface AnimationViewController ()
 {
-    BOOL menuOn;
     CGRect hamburgerMenuFrame;
-    LOTAnimationView *hamburgerButton;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *additionalMenuButton;
@@ -20,46 +18,46 @@
 @property (weak, nonatomic) IBOutlet UIView *hamburgerButtonView;
 
 - (IBAction)showAnimation:(UIButton *)sender;
-- (void)addHamburgerButton:(BOOL)on;
 - (void)addMenuToggleRecognizer;
 - (void)toggleMenu:(UITapGestureRecognizer *)recognizer;
 
 @end
 
-@implementation ViewController
+
+@implementation AnimationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    menuOn = false;
+    _menuOn = false;
     hamburgerMenuFrame = CGRectMake(-30, -18, 75, 75);
     _hamburgerButtonView.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
     
+    [self addHamburgerButton:_menuOn];
     
-    [self addHamburgerButton:menuOn];
-    
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+
     [_additionalMenuButton setTarget:self.revealViewController];
     [_additionalMenuButton setAction:@selector(revealToggle:)];
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 
 - (void)addHamburgerButton:(BOOL)on {
-    if (hamburgerButton != nil) {
-        [hamburgerButton removeFromSuperview];
-        hamburgerButton = nil;
+    if (_hamburgerButton != nil) {
+        [_hamburgerButton removeFromSuperview];
+        _hamburgerButton = nil;
     }
     
     NSString *animation = on ? @"buttonOff" : @"buttonOn";
     
-    hamburgerButton = [LOTAnimationView animationNamed:animation];
-    [hamburgerButton setUserInteractionEnabled:true];
-    hamburgerButton.frame = hamburgerMenuFrame;
-    hamburgerButton.contentMode = UIViewContentModeScaleAspectFill;
+    _hamburgerButton = [LOTAnimationView animationNamed:animation];
+    [_hamburgerButton setUserInteractionEnabled:true];
+    _hamburgerButton.frame = hamburgerMenuFrame;
+    _hamburgerButton.contentMode = UIViewContentModeScaleAspectFill;
     
     [self addMenuToggleRecognizer];
     
-    [_hamburgerButtonView addSubview:hamburgerButton];
+    [_hamburgerButtonView addSubview:_hamburgerButton];
 }
 
 - (void)addMenuToggleRecognizer{
@@ -69,28 +67,31 @@
     
     tapRecognizer.numberOfTapsRequired = 1;
     
-    [hamburgerButton addGestureRecognizer:tapRecognizer];
+    [_hamburgerButton addGestureRecognizer:tapRecognizer];
 }
 
 - (void)toggleMenu:(UITapGestureRecognizer *)recognizer {
-    if (!menuOn) {
-        [hamburgerButton setAnimationSpeed:2.5];
-        [hamburgerButton playWithCompletion:^(BOOL animationFinished) {
-            menuOn = true;
-            [self addHamburgerButton:menuOn];
-        }];
+    if (!_menuOn) {
+        [_hamburgerButton setAnimationSpeed:2.5];
+        [_hamburgerButton play];
+//        [_hamburgerButton playWithCompletion:^(BOOL animationFinished) {
+//            menuOn = true;
+//            [self addHamburgerButton:menuOn];
+//        }];
     } else {
-        [hamburgerButton setAnimationSpeed:1.5];
-        [hamburgerButton playWithCompletion:^(BOOL animationFinished) {
-            menuOn = false;
-            [self addHamburgerButton:menuOn];
-        }];
+        [_hamburgerButton setAnimationSpeed:1.5];
+        [_hamburgerButton play];
+//        [_hamburgerButton playWithCompletion:^(BOOL animationFinished) {
+//            menuOn = false;
+//            [self addHamburgerButton:menuOn];
+//        }];
     }
 }
 
 - (IBAction)showAnimation:(UIButton *)sender {
-    LOTAnimationView *animationView = [LOTAnimationView animationNamed:@"PinJump"];
-    animationView.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.width);
+    LOTAnimationView *animationView = [LOTAnimationView animationNamed:@"buttonOn"];
+    animationView.frame = CGRectMake(100, 200, 75, 75);
+    animationView.backgroundColor = [UIColor redColor];
     animationView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:animationView];
     animationView.loopAnimation = YES;

@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
+#import "ZTRevealViewController.h"
 #import <Lottie/Lottie.h>
 
-@interface ViewController : UIViewController
+@interface AnimationViewController : UIViewController
+
+@property BOOL menuOn;
+@property LOTAnimationView *hamburgerButton;
+
+- (void)addHamburgerButton:(BOOL)on;
 
 @end

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Animation View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AnimationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="129" y="629" width="116" height="30"/>
                                 <state key="normal" title="Show Animation"/>
                                 <connections>
-                                    <action selector="showAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZP3-eY-xUH"/>
+                                    <action selector="showAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z72-Q2-hns"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -46,8 +46,8 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="5mz-Ai-F3d"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="additionalMenuButton" destination="5mz-Ai-F3d" id="ZIm-dx-E9I"/>
-                        <outlet property="hamburgerButtonView" destination="HCC-6A-ja9" id="ATw-uX-Rx5"/>
+                        <outlet property="additionalMenuButton" destination="5mz-Ai-F3d" id="mh5-23-U1t"/>
+                        <outlet property="hamburgerButtonView" destination="HCC-6A-ja9" id="GTD-FY-Dew"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -57,7 +57,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="O2c-nr-h3N">
             <objects>
-                <viewController id="2GH-qU-vUc" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController id="2GH-qU-vUc" customClass="ZTRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dNV-5S-wTK"/>
                         <viewControllerLayoutGuide type="bottom" id="br3-Dc-Kce"/>
@@ -102,7 +102,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="2nu-Jg-KBN" kind="custom" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="R3P-hX-2fE"/>
+                                    <segue destination="2nu-Jg-KBN" kind="custom" identifier="showAnimation" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="xL0-2M-qYR"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settings" textLabel="qno-m6-ET6" style="IBUITableViewCellStyleDefault" id="otM-MX-k7Z">
@@ -122,7 +122,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Fdd-vD-A7R" kind="custom" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="qRL-9y-oV6"/>
+                                    <segue destination="Fdd-vD-A7R" kind="custom" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="dAX-e6-hZm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -199,6 +199,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="R3P-hX-2fE"/>
+        <segue reference="V7w-CD-tpE"/>
     </inferredMetricsTieBreakers>
 </document>
