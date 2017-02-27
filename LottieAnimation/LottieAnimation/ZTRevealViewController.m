@@ -18,8 +18,15 @@
     [self tapGestureRecognizer];
     
     self.delegate = self;
+    
+//    [self addObserver:self forKeyPath:@"frontViewPosition" options:0 context:nil];
+    
+//    NSLog(@"%ld\n", (long)self.frontViewPosition);
 }
 
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+//    NSLog(@"!");
+//}
 
 - (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position{
     AnimationViewController *animationController = self.frontViewController.childViewControllers.firstObject;

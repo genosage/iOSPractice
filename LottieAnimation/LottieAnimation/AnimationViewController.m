@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _menuOn = false;
+    self.menuOn = false;
     hamburgerMenuFrame = CGRectMake(-30, -18, 75, 75);
     _hamburgerButtonView.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
     
@@ -39,8 +39,13 @@
 
     [_additionalMenuButton setTarget:self.revealViewController];
     [_additionalMenuButton setAction:@selector(revealToggle:)];
+    
+    [self addObserver:self forKeyPath:@"menuOn" options:0 context:nil];
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    NSLog(@"%@", keyPath);
+}
 
 - (void)addHamburgerButton:(BOOL)on {
     if (_hamburgerButton != nil) {
