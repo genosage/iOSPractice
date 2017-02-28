@@ -762,13 +762,13 @@ const int FrontViewPositionNone = 0xff;
     // intercepting it on the panGestureBegan and panGestureEnded delegates
     _userInteractionStore = self.contentView.userInteractionEnabled;
     
-    [self.contentView addObserver:self forKeyPath:@"frontView.center" options:0 context:nil];
-    NSLog(@"%f\n", self.contentView.frontView.center);
+//    [self.contentView addObserver:self forKeyPath:@"frontView.center" options:0 context:nil];
+//    NSLog(@"%f\n", self.contentView.frontView.center);
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    NSLog(@"%@\n", keyPath);
-}
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+//    NSLog(@"%@\n", keyPath);
+//}
 
 - (NSUInteger)supportedInterfaceOrientations
 {
@@ -1004,7 +1004,7 @@ const int FrontViewPositionNone = 0xff;
     CGFloat xLocation, dragProgress, overProgress;
     [self _getDragLocation:&xLocation progress:&dragProgress overdrawProgress:&overProgress];
     
-    NSLog(@"%f\n", self.contentView.frontView.center);
+//    NSLog(@"%f\n", self.contentView.frontView.center);
     
     if ( [_delegate respondsToSelector:@selector(revealController:panGestureMovedToLocation:progress:overProgress:)] )
         [_delegate revealController:self panGestureMovedToLocation:xLocation progress:dragProgress overProgress:overProgress];
