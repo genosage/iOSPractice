@@ -13,8 +13,9 @@
 
 @interface AnimationViewController : UIViewController
 
-@property (nonatomic) BOOL menuOn;
+//@property (nonatomic) BOOL menuOn;
 @property LOTAnimationView *hamburgerButton;
+@property LOTAnimationView *animationView;
 
 - (void)addHamburgerButton:(BOOL)on;
 

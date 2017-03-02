@@ -36,9 +36,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="faP-l4-ps3">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="GSv-Zm-TQe">
-                            <view key="customView" contentMode="scaleAspectFill" id="HCC-6A-ja9">
-                                <rect key="frame" x="16" y="4" width="35" height="35"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="9Zg-Sp-Kc2">
+                            <view key="customView" contentMode="scaleToFill" id="kLR-vL-LCV">
+                                <rect key="frame" x="16" y="5" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -47,7 +47,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="additionalMenuButton" destination="5mz-Ai-F3d" id="mh5-23-U1t"/>
-                        <outlet property="hamburgerButtonView" destination="HCC-6A-ja9" id="GTD-FY-Dew"/>
+                        <outlet property="hamburgerButtonView" destination="kLR-vL-LCV" id="5aO-8k-Fe3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

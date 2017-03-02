@@ -28,30 +28,38 @@
 //    NSLog(@"!");
 //}
 
-- (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position{
+- (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position{
     AnimationViewController *animationController = self.frontViewController.childViewControllers.firstObject;
     if (position == FrontViewPositionRight) {
-        animationController.menuOn = true;
-        [animationController addHamburgerButton:true];
+        [animationController.hamburgerButton setAnimationSpeed:3];
+        [animationController.hamburgerButton playWithCompletion:^(BOOL animationFinished) {
+//            animationController.menuOn = YES;
+            [animationController addHamburgerButton:YES];
+        }];
     } else if (position == FrontViewPositionLeft) {
-        animationController.menuOn = false;
-        [animationController addHamburgerButton:false];
+        [animationController.hamburgerButton setAnimationSpeed:2];
+        [animationController.hamburgerButton playWithCompletion:^(BOOL animationFinished) {
+//            animationController.menuOn = NO;
+            [animationController addHamburgerButton:NO];
+        }];
     }
 }
 
 
-- (void)revealController:(SWRevealViewController *)revealController panGestureMovedToLocation:(CGFloat)location progress:(CGFloat)progress overProgress:(CGFloat)overProgress{
-    AnimationViewController *animationController = self.frontViewController.childViewControllers.firstObject;
-    
-    if (progress > 1) {
-        progress = 1;
-    }
-    
-    if (!animationController.menuOn) {
-        [animationController.hamburgerButton setAnimationProgress:progress];
-    } else {
-        [animationController.hamburgerButton setAnimationProgress:(1-progress)];
-    }
-}
+//- (void)revealController:(SWRevealViewController *)revealController panGestureMovedToLocation:(CGFloat)location progress:(CGFloat)progress overProgress:(CGFloat)overProgress{
+//    AnimationViewController *animationController = self.frontViewController.childViewControllers.firstObject;
+//    
+//    if (progress > 1) {
+//        progress = 1;
+//    }
+//    
+//    if (!animationController.menuOn) {
+//        [animationController.hamburgerButton setAnimationProgress:progress];
+//        [animationController.animationView setAnimationProgress:(1 - progress)];
+//    } else {
+//        [animationController.hamburgerButton setAnimationProgress:(1-progress)];
+//        [animationController.animationView setAnimationProgress: progress];
+//    }
+//}
 
 @end
