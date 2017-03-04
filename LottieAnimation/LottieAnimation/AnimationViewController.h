@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SWRevealViewController.h"
 #import "ZTRevealViewController.h"
 #import <Lottie/Lottie.h>
 
 @interface AnimationViewController : UIViewController
 
-//@property (nonatomic) BOOL menuOn;
 @property LOTAnimationView *hamburgerButton;
 @property LOTAnimationView *animationView;
 

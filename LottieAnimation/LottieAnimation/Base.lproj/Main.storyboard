@@ -43,10 +43,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="5mz-Ai-F3d"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="additionalMenuButton" destination="5mz-Ai-F3d" id="mh5-23-U1t"/>
                         <outlet property="hamburgerButtonView" destination="kLR-vL-LCV" id="5aO-8k-Fe3"/>
                     </connections>
                 </viewController>
@@ -150,12 +148,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TFY-wk-NfD">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="wpa-Eo-xaQ"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="additionalMenuButton" destination="wpa-Eo-xaQ" id="KK4-Dy-AR8"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="TFY-wk-NfD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AvM-LB-iSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
