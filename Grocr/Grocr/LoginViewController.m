@@ -40,8 +40,6 @@
 }
 
 - (IBAction)loginDidTouch:(UIButton *)sender {
-//  [self performSegueWithIdentifier:loginToList sender:nil];
-  
     [[FIRAuth auth] signInWithEmail:_textFieldLoginEmail.text password:_textFieldLoginPassword.text completion:nil];
 }
 - (IBAction)signUpDidTouch:(UIButton *)sender {
