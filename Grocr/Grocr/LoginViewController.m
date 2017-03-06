@@ -17,7 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldLoginPassword;
 
-
 @end
 
 @implementation LoginViewController
@@ -28,17 +27,43 @@
     loginToList = @"LoginToList";
     self.textFieldLoginEmail.delegate = self;
     self.textFieldLoginPassword.delegate = self;
+  
+    [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
+      if (user != nil) {
+        [self performSegueWithIdentifier:loginToList sender:nil];
+      }
+    }];
+}
+
+- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue {
+    [[FIRAuth auth] signOut:nil];
 }
 
 - (IBAction)loginDidTouch:(UIButton *)sender {
-  [self performSegueWithIdentifier:loginToList sender:nil];
+//  [self performSegueWithIdentifier:loginToList sender:nil];
+  
+    [[FIRAuth auth] signInWithEmail:_textFieldLoginEmail.text password:_textFieldLoginPassword.text completion:nil];
 }
 - (IBAction)signUpDidTouch:(UIButton *)sender {
   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Register" message:@"Register" preferredStyle:UIAlertControllerStyleAlert];
   
-  UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:nil];
+  UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    
+    NSString *email = alert.textFields[0].text;
+    NSString *password = alert.textFields[1].text;
+    
+    [[FIRAuth auth] createUserWithEmail:email password:password completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+      
+      if (error == nil) {
+        [[FIRAuth auth] signInWithEmail:email password:password completion:nil];
+      }
+      
+    }];
+    
+  }];
   
-  UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+  
+  UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
   
   [alert addAction:saveAction];
   [alert addAction:cancelAction];

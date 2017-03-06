@@ -41,7 +41,23 @@
   
   [self.navigationItem setLeftBarButtonItem:_userCountBarButtonItem];
   
-  _user = [[User alloc]initWithUid:@"FakeId" andEmail:@"zhangtian1104@gmail.com"];
+//  _user = [[User alloc]initWithUid:@"FakeId" andEmail:@"zhangtian1104@gmail.com"];
+  
+  [[_ref queryOrderedByChild:@"completed"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+    NSMutableArray *newItems = [[NSMutableArray alloc]init];
+    
+    for (FIRDataSnapshot *item in snapshot.children) {
+      GroceryItem *groceryItem = [[GroceryItem alloc] initWithSnapshot:item];
+      [newItems addObject:groceryItem];
+    }
+  
+    self.items = newItems;
+    [self.tableView reloadData];
+  }];
+  
+  [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
+    _user = [[User alloc] initWithFIR:user];
+  }];
 }
 
 - (void)userCountButtonDidTouch{
@@ -74,8 +90,10 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_items removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//        [_items removeObjectAtIndex:indexPath.row];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+      GroceryItem *groceryItem = [_items objectAtIndex:indexPath.row];
+      [groceryItem.ref removeValue];
     }
 }
 
@@ -86,10 +104,9 @@
   BOOL toggledCompletion = !groceryItem.completed;
   
   [self toggleCellCheckbox:cell isCompleted:toggledCompletion];
-  groceryItem.completed = toggledCompletion;
-  
-  [tableView reloadData];
-  
+  [groceryItem.ref updateChildValues:(@{
+                                        @"completed" : @(toggledCompletion)
+                                        })];
 }
 
 - (void)toggleCellCheckbox:(UITableViewCell *)cell isCompleted:(BOOL)isCompleted{
@@ -119,7 +136,7 @@
     [groceryItemRef setValue:[groceryItem toAnyObject]];
   }];
 
-  UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+  UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
   
   [alert addTextFieldWithConfigurationHandler:nil];
   [alert addAction:saveAction];

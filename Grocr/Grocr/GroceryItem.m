@@ -28,7 +28,7 @@
     _key = snapshot.key;
     _name = snapshot.value[@"name"];
     _addedByUser = snapshot.value[@"addedByUser"];
-    _completed = snapshot.value[@"completed"];
+    _completed = [snapshot.value[@"completed"] boolValue];
     _ref = snapshot.ref;
   
     return self;
