@@ -13,6 +13,9 @@
     NSString *userCell;
 }
 
+@property User *user;
+@property FIRDatabaseReference *usersRef;
+
 @end
 
 @implementation OnlineUsersTableViewController
@@ -21,9 +24,50 @@
     [super viewDidLoad];
   
     userCell = @"UserCell";
-    _currentUsers = [[NSMutableArray alloc] init];
-    [_currentUsers addObject:@"zhangtian1104@gmail.com"];
   
+    _usersRef = [[FIRDatabase database] referenceWithPath:@"online"];
+  
+    _currentUsers = [[NSMutableArray alloc] init];
+  
+  [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
+    if (user != nil) {
+      _user = [[User alloc] initWithFIR:user];
+    } else {
+      FIRDatabaseReference *ref = [_usersRef child:_user.uid];
+      [ref removeValue];
+    }
+  }];
+  
+    [_usersRef observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+//      NSLog(@"OnlineUsersTableViewController _usersRefadd Run For Once!!!!");
+      
+      NSString *email = snapshot.value;
+      [_currentUsers addObject:email];
+      
+      NSIndexPath * indexpath = [NSIndexPath indexPathForRow:(_currentUsers.count - 1) inSection:0];
+      
+      [self.tableView insertRowsAtIndexPaths:@[indexpath] withRowAnimation:UITableViewRowAnimationTop];
+      
+    }];
+  
+    [_usersRef observeEventType:FIRDataEventTypeChildRemoved withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+      
+      NSString *emailToFind = snapshot.value;
+
+      [_currentUsers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSString *email = (NSString *)obj;
+        
+        if (email == emailToFind) {
+          
+          [_currentUsers removeObjectAtIndex:idx];
+          
+          NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:0];
+          [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
+      }];
+      
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -42,9 +86,9 @@
     return cell;
 }
 
-- (IBAction)signoutButtonPressed:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-
+- (IBAction)signoutButtonPressed:(UIButton *)sender {
+  [[FIRAuth auth] signOut:nil];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

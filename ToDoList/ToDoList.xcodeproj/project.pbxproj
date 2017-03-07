@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B5CE1BD1E6E60C90086A3E0 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5CE1BC1E6E60C90086A3E0 /* TestViewController.m */; };
 		7BC1E1291E5426C70033FB19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1E1281E5426C70033FB19 /* main.m */; };
 		7BC1E12C1E5426C70033FB19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1E12B1E5426C70033FB19 /* AppDelegate.m */; };
 		7BC1E1321E5426C70033FB19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1E1301E5426C70033FB19 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B5CE1BB1E6E60C90086A3E0 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		7B5CE1BC1E6E60C90086A3E0 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		7BC1E1241E5426C70033FB19 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC1E1281E5426C70033FB19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7BC1E12A1E5426C70033FB19 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +67,8 @@
 		7BC1E1261E5426C70033FB19 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				7B5CE1BB1E6E60C90086A3E0 /* TestViewController.h */,
+				7B5CE1BC1E6E60C90086A3E0 /* TestViewController.m */,
 				7BC1E12A1E5426C70033FB19 /* AppDelegate.h */,
 				7BC1E12B1E5426C70033FB19 /* AppDelegate.m */,
 				7BC1E1451E56A6A70033FB19 /* ToDoItem.h */,
@@ -161,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5CE1BD1E6E60C90086A3E0 /* TestViewController.m in Sources */,
 				7BC1E12C1E5426C70033FB19 /* AppDelegate.m in Sources */,
 				7BC1E1471E56A6A70033FB19 /* ToDoItem.m in Sources */,
 				7BC1E1431E556E850033FB19 /* ToDoListTableViewController.m in Sources */,

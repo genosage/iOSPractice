@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Firebase/Firebase.h>
+#import "User.h"
 
 @interface OnlineUsersTableViewController : UITableViewController
 

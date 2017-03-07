@@ -17,6 +17,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldLoginPassword;
 
+@property (weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
+
+
 @end
 
 @implementation LoginViewController
@@ -28,15 +31,45 @@
     self.textFieldLoginEmail.delegate = self;
     self.textFieldLoginPassword.delegate = self;
   
+    [self.textFieldLoginEmail setText:@""];
+    [self.textFieldLoginPassword setText:@""];
+  
+    [GIDSignIn sharedInstance].clientID =
+    [FIRApp defaultApp].options.clientID;
+    [GIDSignIn sharedInstance].delegate = self;
+    [GIDSignIn sharedInstance].uiDelegate = self;
+  
     [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
+//      NSLog(@"LoginViewController AuthState Run For Once!!!!");
       if (user != nil) {
         [self performSegueWithIdentifier:loginToList sender:nil];
+      } else {
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Email or Password Not Correct!!!" preferredStyle:UIAlertControllerStyleAlert];
+//        
+//        UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+//        
+//        [alert addAction:confirm];
+//        
+//        [self presentViewController:alert animated:YES completion:nil];
       }
     }];
 }
 
 - (IBAction)unwindToLogin:(UIStoryboardSegue *)segue {
-    [[FIRAuth auth] signOut:nil];
+  [_textFieldLoginEmail setText:@""];
+  [_textFieldLoginPassword setText:@""];
+  [_textFieldLoginEmail becomeFirstResponder];
+}
+
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
+  
+  if (error == nil) {
+    GIDAuthentication *authentication = user.authentication;
+    FIRAuthCredential *credential = [FIRGoogleAuthProvider credentialWithIDToken:authentication.idToken accessToken:authentication.accessToken];
+    
+    [[FIRAuth auth] signInWithCredential:credential completion:nil];
+  }
+  
 }
 
 - (IBAction)loginDidTouch:(UIButton *)sender {

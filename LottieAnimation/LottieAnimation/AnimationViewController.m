@@ -41,7 +41,7 @@
     
     _hamburgerButton = [LOTAnimationView animationNamed:animation];
     [_hamburgerButton setUserInteractionEnabled:true];
-    _hamburgerButton.frame = CGRectMake(-30, -18, 75, 75);
+    _hamburgerButton.frame = CGRectMake(-30, -20, 75, 75);
 //    _hamburgerButton.leftAnchor
     _hamburgerButton.contentMode = UIViewContentModeScaleAspectFill;
     
@@ -59,13 +59,12 @@
 }
 
 - (IBAction)showAnimation:(UIButton *)sender {
-    _animationView = [LOTAnimationView animationNamed:@"buttonOff"];
+    _animationView = [LOTAnimationView animationNamed:@"PinJump"];
     _animationView.frame = CGRectMake(100, 200, 75, 75);
-//    animationView.backgroundColor = [UIColor redColor];
     _animationView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:_animationView];
-//    animationView.loopAnimation = YES;
-//    [animationView play];
+    _animationView.loopAnimation = YES;
+    [_animationView play];
 }
 
 @end

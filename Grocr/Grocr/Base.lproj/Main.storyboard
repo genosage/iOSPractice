@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grocr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlR-6D-pNE">
-                                <rect key="frame" x="104.5" y="72" width="166" height="59"/>
+                                <rect key="frame" x="105" y="72" width="166" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="D2O-pG-5WL"/>
                                     <constraint firstAttribute="height" constant="59" id="gPQ-9y-BZM"/>
@@ -100,6 +100,10 @@
                                     <action selector="loginDidTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="P2g-35-481"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHn-Ci-jVp" customClass="GIDSignInButton">
+                                <rect key="frame" x="70" y="515" width="235" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.29204627871513367" green="0.65247046947479248" blue="0.49190118908882141" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -109,17 +113,22 @@
                             <constraint firstItem="FXf-pW-pxd" firstAttribute="top" secondItem="XlR-6D-pNE" secondAttribute="bottom" constant="116" id="IDh-LG-peZ"/>
                             <constraint firstAttribute="centerX" secondItem="XlR-6D-pNE" secondAttribute="centerX" id="ItG-A2-m0j"/>
                             <constraint firstItem="hxW-pl-K5k" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="54" id="P42-vj-kV2"/>
+                            <constraint firstItem="UHn-Ci-jVp" firstAttribute="leading" secondItem="ufw-i0-710" secondAttribute="leading" id="TaL-Ku-jKi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ufw-i0-710" secondAttribute="trailing" constant="54" id="Wg2-fK-Qye"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FXf-pW-pxd" secondAttribute="trailing" constant="54" id="ZGI-2N-yal"/>
                             <constraint firstItem="FXf-pW-pxd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="54" id="cFz-lW-Iqb"/>
                             <constraint firstItem="vRw-I3-Jav" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="54" id="fKW-2O-KoJ"/>
+                            <constraint firstItem="UHn-Ci-jVp" firstAttribute="top" secondItem="ufw-i0-710" secondAttribute="bottom" constant="88" id="jRH-bj-ELf"/>
                             <constraint firstItem="ufw-i0-710" firstAttribute="top" secondItem="vRw-I3-Jav" secondAttribute="bottom" constant="16" id="kg0-1B-eeL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vRw-I3-Jav" secondAttribute="trailing" constant="54" id="mSh-Am-AZ6"/>
+                            <constraint firstItem="UHn-Ci-jVp" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ntc-DN-y8g"/>
                             <constraint firstItem="vRw-I3-Jav" firstAttribute="top" secondItem="hxW-pl-K5k" secondAttribute="bottom" constant="20" id="o2G-6e-s6Y"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="UHn-Ci-jVp" secondAttribute="bottom" constant="92" id="pJd-hw-c8p"/>
                             <constraint firstItem="hxW-pl-K5k" firstAttribute="top" secondItem="FXf-pW-pxd" secondAttribute="bottom" constant="8" id="w4t-Rh-6er"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="signInButton" destination="UHn-Ci-jVp" id="Hw7-iC-bne"/>
                         <outlet property="textFieldLoginEmail" destination="FXf-pW-pxd" id="NEu-Z4-Gnf"/>
                         <outlet property="textFieldLoginPassword" destination="hxW-pl-K5k" id="YGY-Du-DKr"/>
                         <segue destination="OO3-Em-sDU" kind="presentation" identifier="LoginToList" id="YGd-c0-b6a"/>
@@ -127,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287" y="399"/>
+            <point key="canvasLocation" x="285.60000000000002" y="398.95052473763121"/>
         </scene>
         <!--Online-->
         <scene sceneID="Sch-pW-oZ2">
@@ -169,13 +178,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Sign out"/>
                                 <connections>
-                                    <action selector="signoutButtonPressed:" destination="oUo-Uh-r42" eventType="touchUpInside" id="7t6-Cu-gvj"/>
-                                    <segue destination="EHF-75-Cm2" kind="unwind" unwindAction="unwindToLogin:" id="LwL-fn-li8"/>
+                                    <action selector="signoutButtonPressed:" destination="oUo-Uh-r42" eventType="touchUpInside" id="iVs-nk-0aL"/>
+                                    <segue destination="EHF-75-Cm2" kind="unwind" unwindAction="unwindToLogin:" id="5cf-JQ-Vvi"/>
                                 </connections>
                             </button>
-                            <connections>
-                                <action selector="signoutButtonPressed:" destination="oUo-Uh-r42" id="UGe-hZ-9vI"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -243,7 +249,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OO3-Em-sDU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="M8w-Wp-a2U">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="M8w-Wp-a2U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

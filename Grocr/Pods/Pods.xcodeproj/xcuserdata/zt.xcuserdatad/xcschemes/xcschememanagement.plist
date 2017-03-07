@@ -4,15 +4,45 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods.xcscheme</key>
+		<key>GTMOAuth2.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Grocr.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1469924FC52F60B0068FA24EEFCB3EFC</key>
+		<key>1189E7C0D818D5B5077E9D8973126624</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58885A79D8F2FE6A57DF1D65A1A33E7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EAE45C123C22F83F258F201FDFBA835E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD2CF82C85390074D3834DBC79A07387</key>
 		<dict>
 			<key>primary</key>
 			<true/>

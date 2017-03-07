@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
+#import <GoogleSignIn/GoogleSignIn.h>
 
-@interface LoginViewController : UIViewController<UITextFieldDelegate>
+@interface LoginViewController : UIViewController<UITextFieldDelegate, GIDSignInDelegate, GIDSignInUIDelegate>
 
 @end

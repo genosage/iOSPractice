@@ -17,6 +17,7 @@
 @property User *user;
 @property UIBarButtonItem *userCountBarButtonItem;
 @property FIRDatabaseReference *ref;
+@property FIRDatabaseReference *usersRef;
 
 - (void)userCountButtonDidTouch;
 - (void)toggleCellCheckbox:(UITableViewCell *)cell isCompleted:(BOOL)isCompleted;
@@ -29,21 +30,21 @@
     [super viewDidLoad];
   
     _ref = [[FIRDatabase database]referenceWithPath:@"grocery-items"];
+    _usersRef = [[FIRDatabase database] referenceWithPath:@"online"];
   
     [self.tableView setAllowsMultipleSelectionDuringEditing:NO];
   
     listToUsers = @"ListToUsers";
     _items = [[NSMutableArray alloc]init];
   
-  _userCountBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"1" style:UIBarButtonItemStylePlain target:self action:@selector(userCountButtonDidTouch)];
+  _userCountBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"0" style:UIBarButtonItemStylePlain target:self action:@selector(userCountButtonDidTouch)];
   
   [_userCountBarButtonItem setTintColor:[UIColor whiteColor]];
   
   [self.navigationItem setLeftBarButtonItem:_userCountBarButtonItem];
   
-//  _user = [[User alloc]initWithUid:@"FakeId" andEmail:@"zhangtian1104@gmail.com"];
-  
   [[_ref queryOrderedByChild:@"completed"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+//    NSLog(@"GroceryListTableViewController _ref Run For Once!!!!");
     NSMutableArray *newItems = [[NSMutableArray alloc]init];
     
     for (FIRDataSnapshot *item in snapshot.children) {
@@ -51,13 +52,32 @@
       [newItems addObject:groceryItem];
     }
   
-    self.items = newItems;
+    _items = newItems;
     [self.tableView reloadData];
   }];
   
   [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
-    _user = [[User alloc] initWithFIR:user];
+//    NSLog(@"GroceryListTableViewController AuthState Run For Once!!!!");
+    
+    if (user != nil) {
+      _user = [[User alloc] initWithFIR:user];
+      
+      FIRDatabaseReference *currentUserRef = [_usersRef child:_user.uid];
+      [currentUserRef setValue:_user.email];
+      [currentUserRef onDisconnectRemoveValue];
+    }
+    
   }];
+  
+  [_usersRef observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+//    NSLog(@"GroceryListTableViewController _usersRef Run For Once!!!!");
+    if ([snapshot exists]) {
+      [_userCountBarButtonItem setTitle:[@(snapshot.childrenCount) stringValue]];
+    } else {
+      [_userCountBarButtonItem setTitle:@"0"];
+    }
+  }];
+  
 }
 
 - (void)userCountButtonDidTouch{
