@@ -23,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
+    [GIDSignIn sharedInstance].clientID =
+    [FIRApp defaultApp].options.clientID;
+  
     userCell = @"UserCell";
   
     _usersRef = [[FIRDatabase database] referenceWithPath:@"online"];
@@ -87,6 +90,7 @@
 }
 
 - (IBAction)signoutButtonPressed:(UIButton *)sender {
+  [[GIDSignIn sharedInstance] signOut];
   [[FIRAuth auth] signOut:nil];
   [self dismissViewControllerAnimated:YES completion:nil];
 }

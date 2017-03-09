@@ -28,6 +28,14 @@
 				<string>com.googleusercontent.apps.598179004401-jt70vbpdqiub5f9epp0heircbaqba07c</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>rw.firebase.gettingstarted</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>

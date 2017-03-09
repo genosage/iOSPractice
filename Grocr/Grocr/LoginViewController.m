@@ -74,6 +74,7 @@
 
 - (IBAction)loginDidTouch:(UIButton *)sender {
     [[FIRAuth auth] signInWithEmail:_textFieldLoginEmail.text password:_textFieldLoginPassword.text completion:nil];
+//  [[GIDSignIn sharedInstance] disconnect];
 }
 - (IBAction)signUpDidTouch:(UIButton *)sender {
   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Register" message:@"Register" preferredStyle:UIAlertControllerStyleAlert];

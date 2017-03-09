@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import <GoogleSignIn/GoogleSignIn.h>
 
 @interface OnlineUsersTableViewController : UITableViewController
 
