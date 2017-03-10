@@ -14,10 +14,11 @@
 @property NSString *key;
 @property NSString *name;
 @property NSString *addedByUser;
+@property NSString *addedByUid;
 @property FIRDatabaseReference *ref;
 @property BOOL completed;
 
-- (id)initWithName:(NSString *)name addedByUser:(NSString *)addedByUser completed:(BOOL)completed key:(NSString *)key;
+- (id)initWithName:(NSString *)name addedByUser:(NSString *)addedByUser addedByUid:(NSString *)addedByUid completed:(BOOL)completed key:(NSString *)key;
 
 - (id)initWithSnapshot:(FIRDataSnapshot *)snapshot;
 

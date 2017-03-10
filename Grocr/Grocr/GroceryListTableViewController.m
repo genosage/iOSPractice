@@ -43,7 +43,7 @@
   
   [self.navigationItem setLeftBarButtonItem:_userCountBarButtonItem];
   
-  [[_ref queryOrderedByChild:@"completed"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+  [_ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
 //    NSLog(@"GroceryListTableViewController _ref Run For Once!!!!");
     NSMutableArray *newItems = [[NSMutableArray alloc]init];
     
@@ -147,7 +147,7 @@
   UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
     
     UITextField *textField = alert.textFields.firstObject;
-    GroceryItem *groceryItem = [[GroceryItem alloc]initWithName:textField.text addedByUser:_user.email completed:NO key:nil];
+    GroceryItem *groceryItem = [[GroceryItem alloc]initWithName:textField.text addedByUser:_user.email addedByUid:_user.uid completed:NO key:nil];
     
 //    [_items addObject:groceryItem];
 //    [self.tableView reloadData];
