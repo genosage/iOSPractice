@@ -31,9 +31,6 @@
     self.textFieldLoginEmail.delegate = self;
     self.textFieldLoginPassword.delegate = self;
   
-    [self.textFieldLoginEmail setText:@""];
-    [self.textFieldLoginPassword setText:@""];
-  
     [GIDSignIn sharedInstance].clientID =
     [FIRApp defaultApp].options.clientID;
     [GIDSignIn sharedInstance].delegate = self;
@@ -43,14 +40,6 @@
 //      NSLog(@"LoginViewController AuthState Run For Once!!!!");
       if (user != nil) {
         [self performSegueWithIdentifier:loginToList sender:nil];
-      } else {
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Email or Password Not Correct!!!" preferredStyle:UIAlertControllerStyleAlert];
-//        
-//        UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-//        
-//        [alert addAction:confirm];
-//        
-//        [self presentViewController:alert animated:YES completion:nil];
       }
     }];
 }
@@ -73,7 +62,8 @@
 }
 
 - (IBAction)loginDidTouch:(UIButton *)sender {
-    [[FIRAuth auth] signInWithEmail:_textFieldLoginEmail.text password:_textFieldLoginPassword.text completion:nil];
+    [[FIRAuth auth] signInWithEmail:_textFieldLoginEmail.text password:_textFieldLoginPassword.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+    }];
 }
 
 - (IBAction)signUpDidTouch:(UIButton *)sender {
