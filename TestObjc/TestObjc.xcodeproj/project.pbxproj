@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B34038F1EB1AC2E004224F2 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B34038E1EB1AC2E004224F2 /* TestViewController.m */; };
 		7B4F90D11E5155D80075AAD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F90D01E5155D80075AAD6 /* main.m */; };
 		7B4F90D41E5155D80075AAD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F90D31E5155D80075AAD6 /* AppDelegate.m */; };
 		7B4F90D71E5155D80075AAD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F90D61E5155D80075AAD6 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B34038D1EB1AC2E004224F2 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		7B34038E1EB1AC2E004224F2 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		7B4F90CC1E5155D80075AAD6 /* TestObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B4F90D01E5155D80075AAD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7B4F90D21E5155D80075AAD6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 				7B4F90E71E515D070075AAD6 /* SampleClass.m */,
 				7B4F90D21E5155D80075AAD6 /* AppDelegate.h */,
 				7B4F90D31E5155D80075AAD6 /* AppDelegate.m */,
+				7B34038D1EB1AC2E004224F2 /* TestViewController.h */,
+				7B34038E1EB1AC2E004224F2 /* TestViewController.m */,
 				7B4F90D51E5155D80075AAD6 /* ViewController.h */,
 				7B4F90D61E5155D80075AAD6 /* ViewController.m */,
 				7B4F90D81E5155D80075AAD6 /* Main.storyboard */,
@@ -172,6 +177,7 @@
 			files = (
 				7BF047DD1E53C62500BC0574 /* PrintClass.m in Sources */,
 				7B4F90E81E515D070075AAD6 /* SampleClass.m in Sources */,
+				7B34038F1EB1AC2E004224F2 /* TestViewController.m in Sources */,
 				7BF047D91E53C2AC00BC0574 /* SampleClass+TestCategory.m in Sources */,
 				7B4F90D71E5155D80075AAD6 /* ViewController.m in Sources */,
 				7B4F90D41E5155D80075AAD6 /* AppDelegate.m in Sources */,
