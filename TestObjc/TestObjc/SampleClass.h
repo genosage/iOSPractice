@@ -7,7 +7,6 @@
 //
 #import <Foundation/Foundation.h>
 #import "PrintClass.h"
-#import "PrintProtocolDelegate.h"
 
 typedef void (^VoidBlock)();
 

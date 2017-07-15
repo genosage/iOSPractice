@@ -21,8 +21,9 @@ extern float f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
-    SampleClass *sampleClass = [[SampleClass alloc]init];
+//    SampleClass *sampleClass = [[SampleClass alloc]init];
 
 //    const int WIDTH = 10;
 //    [sampleClass sampleMethod];
@@ -105,12 +106,5 @@ extern float f;
 //    NSLog(@"First U.K. make: %@", [ukMakes objectAtIndex:0]);
     
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end

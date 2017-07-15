@@ -37,7 +37,6 @@
 		7BF047D71E53C2AC00BC0574 /* SampleClass+TestCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SampleClass+TestCategory.h"; sourceTree = "<group>"; };
 		7BF047D81E53C2AC00BC0574 /* SampleClass+TestCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SampleClass+TestCategory.m"; sourceTree = "<group>"; };
 		7BF047DA1E53C34A00BC0574 /* SampleClass_TestExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleClass_TestExtension.h; sourceTree = "<group>"; };
-		7BF047DB1E53C59F00BC0574 /* PrintProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintProtocolDelegate.h; sourceTree = "<group>"; };
 		7BF047DC1E53C62500BC0574 /* PrintClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintClass.m; sourceTree = "<group>"; };
 		7BF047DE1E53C64800BC0574 /* PrintClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintClass.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +73,6 @@
 			children = (
 				7BF047DE1E53C64800BC0574 /* PrintClass.h */,
 				7BF047DC1E53C62500BC0574 /* PrintClass.m */,
-				7BF047DB1E53C59F00BC0574 /* PrintProtocolDelegate.h */,
 				7BF047D71E53C2AC00BC0574 /* SampleClass+TestCategory.h */,
 				7BF047D81E53C2AC00BC0574 /* SampleClass+TestCategory.m */,
 				7BF047DA1E53C34A00BC0574 /* SampleClass_TestExtension.h */,
