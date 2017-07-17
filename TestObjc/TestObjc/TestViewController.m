@@ -23,12 +23,12 @@
     
     // Do any additional setup after loading the view.
     
-//    _testView.layer.shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
-//    _testView.layer.shadowOffset = CGSizeMake(0,0);
-//    _testView.layer.shadowOpacity = 0.2;
-//    _testView.layer.shadowRadius = 4;
-//    _testView.layer.masksToBounds = YES;
-//    _testView.layer.cornerRadius = 6;
+    //    _testView.layer.shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
+    //    _testView.layer.shadowOffset = CGSizeMake(0,0);
+    //    _testView.layer.shadowOpacity = 0.2;
+    //    _testView.layer.shadowRadius = 4;
+    //    _testView.layer.masksToBounds = YES;
+    //    _testView.layer.cornerRadius = 6;
     
 }
 
@@ -45,16 +45,16 @@
     
     [btn addTarget:self action:@selector(clickPThread) forControlEvents:UIControlEventTouchUpInside];
     
-//    [self.view addSubview:btn];
+    //    [self.view addSubview:btn];
     
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeSystem];
     btn1.frame = CGRectMake(100, 100, 100, 30);
     [btn1 setTitle:@"NSThread" forState:UIControlStateNormal];
     [btn1 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-
+    
     [btn1 addTarget:self action:@selector(clickNSThread) forControlEvents:UIControlEventTouchUpInside];
     
-//    [self.view addSubview:btn1];
+    //    [self.view addSubview:btn1];
     
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
     btn2.frame = CGRectMake(100, 200, 100, 30);
@@ -63,7 +63,7 @@
     
     [btn2 addTarget:self action:@selector(clickGCD) forControlEvents:UIControlEventTouchUpInside];
     
-//    [self.view addSubview:btn2];
+    //    [self.view addSubview:btn2];
     
     UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeSystem];
     btn3.frame = CGRectMake(100, 200, 100, 30);
@@ -117,14 +117,14 @@ void *run (void *data) {
     [thread1 setThreadPriority:0.1];
     [thread1 start];
     
-//    [NSThread detachNewThreadSelector:@selector(runThread) toTarget:self withObject:nil];
+    //    [NSThread detachNewThreadSelector:@selector(runThread) toTarget:self withObject:nil];
     
-//    [self performSelectorInBackground:@selector(runThread) withObject:nil];
+    //    [self performSelectorInBackground:@selector(runThread) withObject:nil];
     
-//    for (int i = 0; i < 10; i++) {
-//        NSLog(@"main: %d", i);
-//        sleep(1);
-//    }
+    //    for (int i = 0; i < 10; i++) {
+    //        NSLog(@"main: %d", i);
+    //        sleep(1);
+    //    }
 }
 
 - (void)runThread {
@@ -132,22 +132,22 @@ void *run (void *data) {
     
     for (int i = 0; i < 10; i++) {
         NSLog(@"child: %d", i);
-//        sleep(1);
+        //        sleep(1);
     }
 }
 
 - (void)clickGCD {
     NSLog(@"Begin GCD!");
     
-//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//        NSLog(@"Start task1!");
-//        [NSThread sleepForTimeInterval:3];
-//        NSLog(@"Finish task1!");
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSLog(@"Update UI!");
-//        });
-//    });
+    //    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    //        NSLog(@"Start task1!");
+    //        [NSThread sleepForTimeInterval:3];
+    //        NSLog(@"Finish task1!");
+    //
+    //        dispatch_async(dispatch_get_main_queue(), ^{
+    //            NSLog(@"Update UI!");
+    //        });
+    //    });
     
     dispatch_queue_t queue = dispatch_queue_create("com.test.gcd.queue", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
@@ -170,9 +170,9 @@ void *run (void *data) {
         NSLog(@"All tasks over");
     });
     
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
-//        NSLog(@"delay execute");
-//    });
+    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
+    //        NSLog(@"delay execute");
+    //    });
     
 }
 
@@ -211,24 +211,30 @@ void *run (void *data) {
     
     [self performSelector:@selector(invocationAction) withObject:nil afterDelay:3];
     
-//    NSBlockOperation *blockOper = [NSBlockOperation blockOperationWithBlock:^{
-//        NSLog(@"Start task1!");
-//        [NSThread sleepForTimeInterval:3];
-//        NSLog(@"Finish task1!");
-//    }];
-//    
-//    [blockOper start];
-//    
-//    NSInvocationOperation *invocationOper = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationAction) object:nil];
-//    
-//    [invocationOper start];
+    NSBlockOperation *blockOper = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"Start task1!");
+        [NSThread sleepForTimeInterval:3];
+        NSLog(@"Finish task1!");
+    }];
+    
+    [blockOper addExecutionBlock:^{
+        NSLog(@"Start task2!");
+        [NSThread sleepForTimeInterval:3];
+        NSLog(@"Finish task2!");
+    }];
+    
+    [blockOper start];
+    
+    NSInvocationOperation *invocationOper = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationAction) object:nil];
+    
+    [invocationOper start];
 }
 
 
 -(void)invocationAction {
-    NSLog(@"Start task2!");
+    NSLog(@"Start task3!");
     [NSThread sleepForTimeInterval:3];
-    NSLog(@"Finish task2!");
+    NSLog(@"Finish task3!");
 }
 
 @end
