@@ -35,12 +35,23 @@
     [self.view addSubview:_webView];
     
     
-//    NSURL *url = [NSURL URLWithString:@"http://www.imooc.com"];
-//    
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    
+    NSURL *url = [NSURL URLWithString:@"http://www.imooc.com"];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSURLSession *sharedSession = [NSURLSession sharedSession];
+    
+    NSURLSessionDataTask *dataTask = [sharedSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"%@", [NSThread currentThread]);
+        NSLog(@"%@", data);
+        NSLog(@"%@", response);
+        NSLog(@"%@", error);
+    }];
+    
+    [dataTask resume];
+    
 //    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-//    
+    
 //    [connection start];
 }
 
@@ -48,7 +59,7 @@
     NSURL *url = [NSURL URLWithString:_searchBar.text];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:request];
-    [searchBar resignFirstResponder];
+    [_searchBar resignFirstResponder];
 }
 
 - (void)searchAction {
@@ -57,6 +68,7 @@
     [_webView loadRequest:request];
     [_searchBar resignFirstResponder];
 }
+
 //- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
 //    NSLog(@"%@", response);
 //}
