@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self testThread];
-//    [self testGCD];
+//    [self testThread];
+    [self testGCD];
     
     // Do any additional setup after loading the view.
     
@@ -55,13 +55,13 @@
     dispatch_queue_t serialQueue = dispatch_queue_create("serialQueue", DISPATCH_QUEUE_SERIAL);
     dispatch_queue_t concurrentQueue = dispatch_queue_create("concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(serialQueue, ^{
         NSLog(@"Start task1!");
         [NSThread sleepForTimeInterval:3];
         NSLog(@"Finish task1!");
     });
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(serialQueue, ^{
         NSLog(@"Start task2");
         [NSThread sleepForTimeInterval:3];
         NSLog(@"Finish task2!");
