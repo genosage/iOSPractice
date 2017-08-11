@@ -4,12 +4,23 @@
 
 //@property (nonatomic, weak) id obj;
 
+//@property (nonatomic) NSMutableString *mutableStr;
+
 @end
 
 @implementation RuntimeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+//    NSMutableString *mutableStr1 = [NSMutableString stringWithFormat:@"123"];
+//    self.mutableStr = [mutableStr1 mutableCopy];
+//    
+//    [mutableStr1 appendString:@"456"];
+//    
+//    NSLog(@"%@", self.mutableStr);
+    
 //    dispatch_queue_t queue;
 //    queue = dispatch_queue_create("com.test.gcd.queue", DISPATCH_QUEUE_SERIAL);
 //    
@@ -31,6 +42,14 @@
 //    NSLog(@"%d", pError);
     
     
+//    id array;
+//    
+//    @autoreleasepool {
+//        array = [NSMutableArray array];
+//        NSLog(@"%@", array);
+//    }
+//    
+//    NSLog(@"%@", array);
 }
 
 - (void)test {

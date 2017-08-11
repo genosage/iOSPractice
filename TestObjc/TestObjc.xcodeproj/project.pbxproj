@@ -19,6 +19,9 @@
 		7BD61CE11F2CC94F00941A73 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD61CE01F2CC94F00941A73 /* SecondViewController.m */; };
 		7BD61CE41F2CC9AE00941A73 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD61CE31F2CC9AE00941A73 /* ThirdViewController.m */; };
 		7BE4542D1F2DF396008CE96E /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE4542C1F2DF396008CE96E /* RuntimeViewController.m */; };
+		7BE454301F33277D008CE96E /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE4542F1F33277D008CE96E /* BlockViewController.m */; };
+		7BE454331F370579008CE96E /* Parent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE454321F370579008CE96E /* Parent.m */; };
+		7BE454361F370593008CE96E /* Child.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE454351F370593008CE96E /* Child.m */; };
 		7BF047D91E53C2AC00BC0574 /* SampleClass+TestCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF047D81E53C2AC00BC0574 /* SampleClass+TestCategory.m */; };
 		7BF047DD1E53C62500BC0574 /* PrintClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF047DC1E53C62500BC0574 /* PrintClass.m */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,14 @@
 		7BD61CE31F2CC9AE00941A73 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		7BE4542B1F2DF396008CE96E /* RuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
 		7BE4542C1F2DF396008CE96E /* RuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
+		7BE4542E1F33277D008CE96E /* BlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockViewController.h; sourceTree = "<group>"; };
+		7BE4542F1F33277D008CE96E /* BlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockViewController.m; sourceTree = "<group>"; };
+		7BE454311F370579008CE96E /* Parent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parent.h; sourceTree = "<group>"; };
+		7BE454321F370579008CE96E /* Parent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parent.m; sourceTree = "<group>"; };
+		7BE454341F370593008CE96E /* Child.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Child.h; sourceTree = "<group>"; };
+		7BE454351F370593008CE96E /* Child.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Child.m; sourceTree = "<group>"; };
+		7BE454371F3DDEBD008CE96E /* Useless.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Useless.h; sourceTree = "<group>"; };
+		7BE454381F3DDEBD008CE96E /* Useless.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Useless.m; sourceTree = "<group>"; };
 		7BF047D71E53C2AC00BC0574 /* SampleClass+TestCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SampleClass+TestCategory.h"; sourceTree = "<group>"; };
 		7BF047D81E53C2AC00BC0574 /* SampleClass+TestCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SampleClass+TestCategory.m"; sourceTree = "<group>"; };
 		7BF047DA1E53C34A00BC0574 /* SampleClass_TestExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleClass_TestExtension.h; sourceTree = "<group>"; };
@@ -83,6 +94,14 @@
 		7B4F90CE1E5155D80075AAD6 /* TestObjc */ = {
 			isa = PBXGroup;
 			children = (
+				7BE454371F3DDEBD008CE96E /* Useless.h */,
+				7BE454381F3DDEBD008CE96E /* Useless.m */,
+				7BE454311F370579008CE96E /* Parent.h */,
+				7BE454321F370579008CE96E /* Parent.m */,
+				7BE454341F370593008CE96E /* Child.h */,
+				7BE454351F370593008CE96E /* Child.m */,
+				7BE4542E1F33277D008CE96E /* BlockViewController.h */,
+				7BE4542F1F33277D008CE96E /* BlockViewController.m */,
 				7BE4542B1F2DF396008CE96E /* RuntimeViewController.h */,
 				7BE4542C1F2DF396008CE96E /* RuntimeViewController.m */,
 				7BD61CDC1F2CC92100941A73 /* FirstViewController.h */,
@@ -199,9 +218,12 @@
 				7BE4542D1F2DF396008CE96E /* RuntimeViewController.m in Sources */,
 				7B34038F1EB1AC2E004224F2 /* TestViewController.m in Sources */,
 				7BF047D91E53C2AC00BC0574 /* SampleClass+TestCategory.m in Sources */,
+				7BE454361F370593008CE96E /* Child.m in Sources */,
+				7BE454301F33277D008CE96E /* BlockViewController.m in Sources */,
 				7B4F90D71E5155D80075AAD6 /* ViewController.m in Sources */,
 				7BD61CE41F2CC9AE00941A73 /* ThirdViewController.m in Sources */,
 				7B4F90D41E5155D80075AAD6 /* AppDelegate.m in Sources */,
+				7BE454331F370579008CE96E /* Parent.m in Sources */,
 				7B4F90D11E5155D80075AAD6 /* main.m in Sources */,
 				7BD61CDE1F2CC92100941A73 /* FirstViewController.m in Sources */,
 			);
