@@ -10,12 +10,12 @@
 
 @implementation Parent
 
-+ (void)load {
-    NSLog(@"Parent load");
-}
-
-+ (void)initialize {
-    NSLog(@"Parent initialize");
-}
+//+ (void)load {
+//    NSLog(@"Parent load");
+//}
+//
+//+ (void)initialize {
+//    NSLog(@"Parent initialize");
+//}
 
 @end

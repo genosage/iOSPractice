@@ -10,11 +10,11 @@
 
 @implementation Child
 
-+ (void)load {
-    NSLog(@"Child load");
-}
-+ (void)initialize {
-    NSLog(@"Child initialize");
-}
+//+ (void)load {
+//    NSLog(@"Child load");
+//}
+//+ (void)initialize {
+//    NSLog(@"Child initialize");
+//}
 
 @end

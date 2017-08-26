@@ -19,8 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self myMethod:@"123"];
     
+//    NSString *aString = [[NSData alloc] init];
+//    NSNumber *aNumber = [NSString new];
+//    UIImageView *a = [NSArray new];
+//    NSLog(@"%@", [a class]);
+    
+    
+    
+    
+//    [self myMethod:@"123"];
 //    Child *child = [Child new];
 }
 

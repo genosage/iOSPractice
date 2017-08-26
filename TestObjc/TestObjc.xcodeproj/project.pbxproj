@@ -15,6 +15,7 @@
 		7B4F90DC1E5155D80075AAD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B4F90DB1E5155D80075AAD6 /* Assets.xcassets */; };
 		7B4F90DF1E5155D80075AAD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4F90DD1E5155D80075AAD6 /* LaunchScreen.storyboard */; };
 		7B4F90E81E515D070075AAD6 /* SampleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F90E71E515D070075AAD6 /* SampleClass.m */; };
+		7B5219461F4582B300BCC850 /* SampleClass+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5219451F4582B300BCC850 /* SampleClass+Test.m */; };
 		7BD61CDE1F2CC92100941A73 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD61CDD1F2CC92100941A73 /* FirstViewController.m */; };
 		7BD61CE11F2CC94F00941A73 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD61CE01F2CC94F00941A73 /* SecondViewController.m */; };
 		7BD61CE41F2CC9AE00941A73 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD61CE31F2CC9AE00941A73 /* ThirdViewController.m */; };
@@ -41,6 +42,8 @@
 		7B4F90E01E5155D80075AAD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B4F90E71E515D070075AAD6 /* SampleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleClass.m; sourceTree = "<group>"; };
 		7B4F90E91E515DFE0075AAD6 /* SampleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleClass.h; sourceTree = "<group>"; };
+		7B5219441F4582B300BCC850 /* SampleClass+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SampleClass+Test.h"; sourceTree = "<group>"; };
+		7B5219451F4582B300BCC850 /* SampleClass+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SampleClass+Test.m"; sourceTree = "<group>"; };
 		7BD61CDC1F2CC92100941A73 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		7BD61CDD1F2CC92100941A73 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		7BD61CDF1F2CC94F00941A73 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				7BF047DC1E53C62500BC0574 /* PrintClass.m */,
 				7BF047D71E53C2AC00BC0574 /* SampleClass+TestCategory.h */,
 				7BF047D81E53C2AC00BC0574 /* SampleClass+TestCategory.m */,
+				7B5219441F4582B300BCC850 /* SampleClass+Test.h */,
+				7B5219451F4582B300BCC850 /* SampleClass+Test.m */,
 				7BF047DA1E53C34A00BC0574 /* SampleClass_TestExtension.h */,
 				7B4F90E91E515DFE0075AAD6 /* SampleClass.h */,
 				7B4F90E71E515D070075AAD6 /* SampleClass.m */,
@@ -221,6 +226,7 @@
 				7BE454361F370593008CE96E /* Child.m in Sources */,
 				7BE454301F33277D008CE96E /* BlockViewController.m in Sources */,
 				7B4F90D71E5155D80075AAD6 /* ViewController.m in Sources */,
+				7B5219461F4582B300BCC850 /* SampleClass+Test.m in Sources */,
 				7BD61CE41F2CC9AE00941A73 /* ThirdViewController.m in Sources */,
 				7B4F90D41E5155D80075AAD6 /* AppDelegate.m in Sources */,
 				7BE454331F370579008CE96E /* Parent.m in Sources */,

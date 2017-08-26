@@ -8,6 +8,10 @@
 
 #import "TestViewController.h"
 #import "pthread.h"
+#import "SampleClass.h"
+//#import "SampleClass+TestCategory.h"
+#import "SampleClass+Test.h"
+
 
 @interface TestViewController ()
 
@@ -19,8 +23,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    SampleClass *class = [SampleClass new];
+//    NSLog(@"%d", [class test:2]);
+    
+    
+    
 //    [self testThread];
-    [self testGCD];
+//    [self testGCD];
     
     // Do any additional setup after loading the view.
     
@@ -33,9 +43,19 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)startBtnClick:(UIButton *)sender {
+    [self performSelector:@selector(run) withObject:nil afterDelay:3];
+    [NSThread cancelPreviousPerformRequestsWithTarget:self];
+    
+    NSOperation *operation = [NSOperation new];
+    [operation removeDependency:operation];
+    
+    [NSRunLoop mainRunLoop];
+    [NSRunLoop currentRunLoop];
+}
+
+- (void)run {
+    NSLog(@"%@", [NSThread currentThread]);
 }
 
 - (void)testGCD {

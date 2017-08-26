@@ -10,6 +10,7 @@
 
 @interface SampleClass (TestCategory)
 
+- (int)test:(int)a;
 - (NSString *)returnTestText:(int)testNum;
 
 @end
