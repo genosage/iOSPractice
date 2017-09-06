@@ -23,5 +23,12 @@
     [self.view addSubview:touchView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+}
 
 @end

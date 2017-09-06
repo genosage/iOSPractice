@@ -25,6 +25,7 @@
 		7BE454361F370593008CE96E /* Child.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE454351F370593008CE96E /* Child.m */; };
 		7BF047D91E53C2AC00BC0574 /* SampleClass+TestCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF047D81E53C2AC00BC0574 /* SampleClass+TestCategory.m */; };
 		7BF047DD1E53C62500BC0574 /* PrintClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF047DC1E53C62500BC0574 /* PrintClass.m */; };
+		7BF3D0E01F5D85E200BAF692 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3D0DF1F5D85E200BAF692 /* NewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		7BF047DA1E53C34A00BC0574 /* SampleClass_TestExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleClass_TestExtension.h; sourceTree = "<group>"; };
 		7BF047DC1E53C62500BC0574 /* PrintClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintClass.m; sourceTree = "<group>"; };
 		7BF047DE1E53C64800BC0574 /* PrintClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintClass.h; sourceTree = "<group>"; };
+		7BF3D0DE1F5D85E200BAF692 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
+		7BF3D0DF1F5D85E200BAF692 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 		7B4F90CE1E5155D80075AAD6 /* TestObjc */ = {
 			isa = PBXGroup;
 			children = (
+				7BF3D0DE1F5D85E200BAF692 /* NewViewController.h */,
+				7BF3D0DF1F5D85E200BAF692 /* NewViewController.m */,
 				7BE454371F3DDEBD008CE96E /* Useless.h */,
 				7BE454381F3DDEBD008CE96E /* Useless.m */,
 				7BE454311F370579008CE96E /* Parent.h */,
@@ -224,6 +229,7 @@
 				7B34038F1EB1AC2E004224F2 /* TestViewController.m in Sources */,
 				7BF047D91E53C2AC00BC0574 /* SampleClass+TestCategory.m in Sources */,
 				7BE454361F370593008CE96E /* Child.m in Sources */,
+				7BF3D0E01F5D85E200BAF692 /* NewViewController.m in Sources */,
 				7BE454301F33277D008CE96E /* BlockViewController.m in Sources */,
 				7B4F90D71E5155D80075AAD6 /* ViewController.m in Sources */,
 				7B5219461F4582B300BCC850 /* SampleClass+Test.m in Sources */,
