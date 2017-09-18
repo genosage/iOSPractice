@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ZTViewController.h"
 
 @interface ViewController ()
 
@@ -16,14 +17,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100, 100, 100, 100);
+    btn.backgroundColor = [UIColor colorWithRed:0.489 green:0.548 blue:0.898 alpha:1.000];
+    [btn setTitle:@"push" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(pushZTViewVC:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btn];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)pushZTViewVC:(UIButton *)sender{
+    ZTViewController *vc = [[ZTViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
-
 
 @end
